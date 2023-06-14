@@ -18,6 +18,6 @@ admin-login-page.php :
 
 admin-pahe.php : 
 
-<img width="944" alt="image" src="https://github.com/HazeLdevgggg/Simple-User-Login-and-Sign-UP/assets/105066838/b123b5fb-25c1-4f7d-bb64-4405bd2decb8">
+<img width="941" alt="image" src="https://github.com/HazeLdevgggg/Simple-User-Login-and-Sign-UP/assets/105066838/6e8b7cec-481f-4b1d-a770-099f36ee799c">
 <img width="944" alt="image" src="https://github.com/HazeLdevgggg/Simple-User-Login-and-Sign-UP/assets/105066838/87c1b9ea-e572-42a3-bb77-513ad4a3b1c9">
 
