@@ -85,8 +85,6 @@
         include("config/admin_table.php");
         $ip = $_SERVER['REMOTE_ADDR'];
         $date = date("Y-m-d H:i:s");
-        $connection = new PDO("mysql:host=$serveur;dbname=sportmarludev",$login, $pass);
-        $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $connection->prepare('SELECT * FROM admin WHERE username=?');
         $stmt->execute([$admin_verif_name]); 
         $user = $stmt->fetch();
