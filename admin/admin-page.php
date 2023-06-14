@@ -82,7 +82,7 @@
     $ip = $_SERVER['REMOTE_ADDR'];
 
     try{
-        include("config/user_table.php");
+        include("config/admin_table.php");
         $ip = $_SERVER['REMOTE_ADDR'];
         $date = date("Y-m-d H:i:s");
         $connection = new PDO("mysql:host=$serveur;dbname=sportmarludev",$login, $pass);
@@ -112,7 +112,7 @@
     } 
     if(isset($_POST['admin_new_name'], $_POST['admin_new_pass'])){ 
         try{
-            include("config/config.php");
+            include("config/admin_table.php");
             $ip = $_SERVER['REMOTE_ADDR'];
             $date = date("Y-m-d H:i:s");
             $admin_new_name = $_POST['admin_new_name'];
@@ -144,8 +144,7 @@
         $ip = $_SERVER['REMOTE_ADDR'];
         $date = date("Y-m-d H:i:s");
         try {
-            $connection = new PDO("mysql:host=$serveur;dbname=sportmarludev", $login, $pass); // PDO connection
-            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // PDO Attribute
+            include("config/admin_table.php");
             $add = $connection->prepare("INSERT INTO admin (username, password) VALUES (:add_admin_new_name, :add_admin_new_pass)");
             $add->bindParam(':add_admin_new_name', $add_admin_new_name);
             $add->bindParam(':add_admin_new_pass', $add_admin_new_pass);
@@ -159,7 +158,7 @@
 
 
     try{
-        include("config/config.php");
+        include("config/user_table.php");
         $connection = new PDO("mysql:host=$serveur;dbname=sportmarludev",$login, $pass);
         $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $code = $connection->prepare("SELECT username, id FROM admin");
@@ -206,8 +205,7 @@
         echo $e->getMessage();
     } 
     try{
-        $connection = new PDO("mysql:host=$serveur;dbname=sportmarludev",$login, $pass);
-        $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       include("config/admin_table.php");
         $newadmin = $connection->prepare("SELECT username, id FROM admin");
         $newadmin->execute();
         $info = $newadmin->fetchAll();
