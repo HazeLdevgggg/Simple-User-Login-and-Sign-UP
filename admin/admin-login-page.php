@@ -38,8 +38,6 @@
     if(isset($_POST['admin_name'], $_POST['admin_pass'])){ 
             try{
                 include("config/config.php");
-                $connection = new PDO("mysql:host=$serveur;dbname=sportmarludev",$login, $pass);
-                $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $stmt = $connection->prepare("SELECT * FROM admin  WHERE username=:admin_name");
                 $stmt->bindParam(':admin_name',$_POST['admin_name']);
                 $stmt->execute(); 
