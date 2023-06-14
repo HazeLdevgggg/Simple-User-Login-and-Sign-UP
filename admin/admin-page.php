@@ -82,7 +82,7 @@
     $ip = $_SERVER['REMOTE_ADDR'];
 
     try{
-        include("config/config.php");
+        include("config/user_table.php");
         $ip = $_SERVER['REMOTE_ADDR'];
         $date = date("Y-m-d H:i:s");
         $connection = new PDO("mysql:host=$serveur;dbname=sportmarludev",$login, $pass);
