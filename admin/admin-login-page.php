@@ -37,7 +37,7 @@
 
     if(isset($_POST['admin_name'], $_POST['admin_pass'])){ 
             try{
-                include("config/config.php");
+                include("config/user_table.php");
                 $stmt = $connection->prepare("SELECT * FROM admin  WHERE username=:admin_name");
                 $stmt->bindParam(':admin_name',$_POST['admin_name']);
                 $stmt->execute(); 
